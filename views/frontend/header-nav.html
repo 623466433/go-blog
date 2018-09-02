@@ -1,0 +1,28 @@
+{{define "header-nav"}}
+<header class="header-navigation" id="header">
+    <nav>
+        <div class="logo"><a href="/">潇尘渊</a></div>
+        <h2 id="mnavh"><span class="navicon"></span></h2>
+        <ul id="starlist">
+            <li {{if .IsIndex}} class="selected" {{end}}><a href="/" >首页</a></li>
+            <li {{if .IsAbout}} class="selected" {{end}}><a href="/about">关于我</a></li>
+            <li {{if .IsBooks}} class="selected" {{end}}><a href="/books">小书</a></li>
+            <li {{if .IsArticle}} class="selected" {{end}}><a href="/article">文章列表</a></li>
+            <li {{if .IsTimeline}} class="selected" {{end}}><a href="/timeline">时间轴</a></li>
+            <li {{if .IsMessage}} class="selected" {{end}}><a href="/message">留言</a></li>
+        </ul>
+        <div class="searchbox">
+            <div id="search_bar" class="search_bar">
+                <form id="searchform" action="/showtime/e/search/index.php" method="post" name="searchform">
+                    <input class="input" placeholder="想搜点什么呢.." type="text" name="keyboard" id="keyboard">
+                    <input type="hidden" name="show" value="title" />
+                    <input type="hidden" name="tempid" value="1" />
+                    <input type="hidden" name="tbname" value="news">
+                    <input type="hidden" name="Submit" value="搜索" />
+                    <p class="search_ico"> <span></span></p>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+{{end}}
