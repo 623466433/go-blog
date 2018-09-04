@@ -1,16 +1,17 @@
 package routers
 
 import (
-	"blog/controllers"
+	"blog/controllers/frontend"
 
 	"github.com/astaxie/beego"
 )
 
 func init() {
-	beego.Router("/", &controllers.MainController{})
-	beego.Router("/about", &controllers.AboutController{}, "get:Index")
-	beego.Router("/books", &controllers.BooksController{}, "get:Index")
-	beego.Router("/message", &controllers.MessageController{}, "get:Index")
-	beego.Router("/timeline", &controllers.TimelineController{}, "get:Index")
-	beego.Router("/article", &controllers.ArticleController{}, "get:Index")
+	//前台路由
+	beego.Router("/", &frontend.MainController{})
+	beego.Router("/about", &frontend.AboutController{}, "get:Index")
+	beego.Router("/books", &frontend.BooksController{}, "get:Index")
+	beego.Router("/message", &frontend.MessageController{}, "get:Index")
+	beego.Router("/timeline", &frontend.TimelineController{}, "get:Index")
+	beego.Router("/article", &frontend.ArticleController{}, "get:Index")
 }
